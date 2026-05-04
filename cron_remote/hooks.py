@@ -1,11 +1,32 @@
+import time
+
 app_name = "cron_remote"
 app_title = "Cron Remote"
 app_publisher = "yusufbmuhtar"
-app_description = "Cron Remoting impesonate"
+app_description = "Cron Remote Impersonation System"
 app_email = "yusuf.muhtar@turksab.com"
 app_license = "apache-2.0"
 
-# Apps
+override_whitelisted_methods = {
+    "frappe.core.api.impersonate": "cron_remote.api.impersonate_redirect",
+}
+
+doctype_js = {
+    "User": "public/js/user_extension.js"
+}
+
+# DOĞRU: Tüm global JS dosyaları assets yolundan çağrılır
+app_include_js = [
+    f"/assets/cron_remote/js/remote_connection.js?v=1.0.31&t={int(time.time())}",
+    f"/assets/cron_remote/js/mirror_sync.js?v=1.0.23&t={int(time.time())}",
+]
+
+extend_bootinfo = "cron_remote.api.extend_bootinfo"
+
+app_include_css = []
+website_include_js = []
+website_include_css = []
+
 # ------------------
 
 # required_apps = []

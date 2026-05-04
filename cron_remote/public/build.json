@@ -1,0 +1,5 @@
+{
+  "js/cron_remote.bundle.js": [
+    "public/js/impersonation_listener.js"
+  ]
+}

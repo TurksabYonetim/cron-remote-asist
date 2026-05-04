@@ -1,0 +1,18 @@
+{
+  "doctype": "DocType",
+  "name": "Remote Session",
+  "module": "Cron Remote",
+  "custom": 0,
+  "engine": "InnoDB",
+  "fields": [
+    {"fieldname": "requester", "fieldtype": "Link", "options": "User", "label": "Requester"},
+    {"fieldname": "target_user", "fieldtype": "Link", "options": "User", "label": "Target User"},
+    {"fieldname": "status", "fieldtype": "Select", "options": "Requested\nAccepted\nRejected\nEnded", "label": "Status"},
+    {"fieldname": "allow_control", "fieldtype": "Check", "label": "Allow Control"},
+    {"fieldname": "token", "fieldtype": "Data", "label": "Session Token"},
+    {"fieldname": "logs", "fieldtype": "Text", "label": "Logs"}
+  ],
+  "permissions": [
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1}
+  ]
+}
